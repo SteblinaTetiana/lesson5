@@ -37,7 +37,7 @@ class ReposListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(RepoViewModel::class.java)
         viewModel.getRepo().observe(this, Observer<List<Repo>>{ repos ->
             // update UI
         })
