@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">UserGithubRepo</string>
+    <string name="enter_your_github_username">Enter your Github username</string>
+    <string name="generate">Generate now</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_github_r_sum">GITHUB USERS</string>
+    <string name="repo_name">Repo name</string>
+    <string name="repo_desc">Repo description</string>
+    <string name="open_repo_in_browser">Open Repo in Browser</string>
+    <string name="error_fill_username">Enter at least one username OR Enter another username</string>
+</resources>
