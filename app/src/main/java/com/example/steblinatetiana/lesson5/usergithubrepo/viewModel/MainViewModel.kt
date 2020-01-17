@@ -12,8 +12,10 @@ class MainViewModel : ViewModel() {
 
     private val _username: MutableLiveData<String> = MutableLiveData()
 
+    private val repository = Repository()
+
     val user: LiveData<User> = Transformations.switchMap(_username) { userId ->
-        Repository.getGithubUser(userId)
+        repository.getUser(userId)
 
 
     }
@@ -59,6 +61,6 @@ class MainViewModel : ViewModel() {
 
 
     fun cancelJob() {
-        Repository.cancelJob()
+        repository.cancelJob()
     }
 }

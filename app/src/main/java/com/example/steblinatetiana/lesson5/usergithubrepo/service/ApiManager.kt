@@ -34,7 +34,7 @@ class ApiManager  {
         .build()
 
 
-    val service: GithubService = retrofit.create(GithubService::class.java)
+    private val service: GithubService = retrofit.create(GithubService::class.java)
 
     fun getGithubRepo(username: String): List<Repo> {
         return service.getRepo(username)

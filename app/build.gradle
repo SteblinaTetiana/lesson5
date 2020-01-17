@@ -11,13 +11,13 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.steblinatetiana.lesson5.usergithubrepo"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField 'String', 'URL', 'https://api.github.com/"'
+        buildConfigField 'String', 'URL', '"https://api.github.com/"'
     }
     buildTypes {
         release {

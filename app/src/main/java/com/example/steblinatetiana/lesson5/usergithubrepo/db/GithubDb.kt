@@ -10,6 +10,7 @@ import com.example.steblinatetiana.lesson5.usergithubrepo.entities.User
 @Database(entities = [User::class, Repo::class], version = 1, exportSchema = true)
 
 abstract class GithubDb: RoomDatabase() {
+    abstract fun githubUserRepoDao(): GithubUserRepoDao
 
 
     companion object {

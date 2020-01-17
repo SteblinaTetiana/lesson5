@@ -16,8 +16,7 @@ import com.example.steblinatetiana.lesson5.usergithubrepo.viewModel.MainViewMode
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+
 
 class HomeFragment : Fragment() {
 
@@ -35,9 +34,9 @@ class HomeFragment : Fragment() {
         arguments?.let {
             name = it.getString(ARG_PARAM1)
             bio = it.getString(ARG_PARAM2)
-            image = it.getString(ARG_PARAM2)
-            blog = it.getString(ARG_PARAM2)
-            login = it.getString(ARG_PARAM2)
+            image = it.getString(ARG_PARAM3)
+            blog = it.getString(ARG_PARAM4)
+            login = it.getString(ARG_PARAM5)
 
         }
     }
@@ -108,6 +107,15 @@ class HomeFragment : Fragment() {
         viewModel.cancelJob()
     }
 
+
+companion object{
+
+    private const val ARG_PARAM1 = "param1"
+    private const val ARG_PARAM2 = "param2"
+    private const val ARG_PARAM3 = "param3"
+    private const val ARG_PARAM4 = "param4"
+    private const val ARG_PARAM5 = "param5"
+}
 
 }
 

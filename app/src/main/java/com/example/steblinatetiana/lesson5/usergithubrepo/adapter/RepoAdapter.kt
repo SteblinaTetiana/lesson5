@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.steblinatetiana.lesson5.usergithubrepo.R
 import com.example.steblinatetiana.lesson5.usergithubrepo.entities.Repo
 import kotlinx.android.synthetic.main.repo_list_item.view.*
 
-class RepoAdapter(var repoList: List<Repo>/*, private val clickListener: OnItemClickListener*/) :
+class RepoAdapter(var repoList: List<Repo>?/*, private val clickListener: OnItemClickListener*/) :
     RecyclerView.Adapter<RepoAdapter.RepoViewHolder>() {
 
 
@@ -29,19 +28,19 @@ class RepoAdapter(var repoList: List<Repo>/*, private val clickListener: OnItemC
     }
 
     override fun getItemCount(): Int {
-        return repoList.size
+        return repoList?.size?:0
     }
 
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
-        val repo = this.repoList[position]
+        val repo = this.repoList?.get(position)
         /*holder.bind(repo)*/
 
-        holder.txtRepoName.text = repo.name
-        holder.txtRepoDesc.text = repo.description
+        holder.txtRepoName.text = repo?.name
+        holder.txtRepoDesc.text = repo?.description
 
         holder.btnReposUrl.setOnClickListener {
             val browser =
-                Intent(Intent.ACTION_VIEW, Uri.parse(repo.htmlUrl))
+                Intent(Intent.ACTION_VIEW, Uri.parse(repo?.htmlUrl))
             it.context.startActivity(browser)
 
         }

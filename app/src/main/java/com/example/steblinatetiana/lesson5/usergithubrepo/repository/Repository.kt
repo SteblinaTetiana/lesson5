@@ -7,11 +7,12 @@ import com.example.steblinatetiana.lesson5.usergithubrepo.entities.User
 import com.example.steblinatetiana.lesson5.usergithubrepo.service.ApiManager
 import kotlinx.coroutines.*
 
-class Repository /*private constructor(
-   *//* private val db: GithubDb,
-    private val service: ApiManager.GithubService*//*
-   *//* private val netManager: NetworkManager*//*
-)*/ {
+class Repository/*(
+    private val db: GithubDb,
+    private val service: ApiManager.GithubService
+) */{
+
+
 
     var job: CompletableJob? = null
 
@@ -25,7 +26,7 @@ class Repository /*private constructor(
                     CoroutineScope(Dispatchers.IO + theJob).launch {
 
                         //fetch data from web service here
-                        val user = ApiManager.GithubService().getGithubUser(username)
+                        val user = ApiManager().getGithubUser(username)
                         withContext(Dispatchers.Main) {
                             value = user
                             theJob.complete()
@@ -48,7 +49,7 @@ class Repository /*private constructor(
                     CoroutineScope(Dispatchers.IO + theJob).launch {
 
                         //fetch data from web service here
-                        val repo =  ApiManager.GithubService().getGithubRepo(username)
+                        val repo =  ApiManager().getGithubRepo(username)
                         withContext(Dispatchers.Main) {
 
                             value = repo
